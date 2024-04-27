@@ -97,7 +97,7 @@ def assessment(emotions, scores, negatives):
 
 num_classes = 7
 model = EfficientNet.from_name('efficientnet-b0', num_classes=num_classes)
-model.load_state_dict(torch.load("D:\Programming\emotion_recognition_model.pth", map_location=torch.device('cpu')))
+model.load_state_dict(torch.load("emotion_recognition_model.pth", map_location=torch.device('cpu')))
 model.eval()
 
 dass21_questions = [

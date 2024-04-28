@@ -205,7 +205,7 @@ class EmotionAssessmentApp:
 
 
     def display_next_question(self):
-        # Capture video frame
+        
         ret, frame = self.cap.read()
         if ret:
             input_frame = preprocess_frame(frame)
@@ -241,7 +241,7 @@ class EmotionAssessmentApp:
             messagebox.showerror("Error", "Please enter a valid score (0-3).")
 
     def finish_assessment(self):
-        # Destroy all widgets related to the assessment
+        
         self.question_label.destroy()
         self.question_text.destroy()
         self.video_label.destroy()
@@ -250,7 +250,6 @@ class EmotionAssessmentApp:
         self.score_entry.destroy()
         self.next_button.destroy()
 
-        # Perform the assessment
         symptom, final_assess, dass_val, total_score = assessment(self.emotions, self.scores, self.negative_emotions)
         stress_val = evaluate_stress(dass_val[0])
         anxiety_val = evaluate_anxiety(dass_val[1])
